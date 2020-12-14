@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knit or Purl</title>
+</head>
+
+<style>
+    div {
+        text-align: center;
+        background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+        margin: auto;
+        width: 60%;
+        padding: 10px;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        color: white;
+        border-radius: 5px;
+    }
+
+    button {
+        background-color: rgb(27, 116, 116);
+        border-radius: 8px;
+        size: 300px;
+        color: white;
+        padding: 15px;
+
+    }
+        
+</style>
+
+<body>
+
+<div>
+    <img id='img' src='knit.png' style="width:30%;height:30%;">
+    <h1 id='h1'>You are now knitting</h1>
+    <h2 id='h2'>You need to purl next</h2>
+    <button id='btn' onclick='doNext()'>I'm done knitting!</button>
+</div>
+
+<script>
+    x = 0;
+
+    function doNext() {
+        x = x + 1;
+        if ( x%2 == 1) {
+            document.getElementById('img').src = 'purl.png';
+            document.getElementById('h1').innerHTML = "You are now purling";
+            document.getElementById('h2').innerHTML = "You need to knit next";
+            document.getElementById('btn').innerHTML = "I'm done purling!";
+        } else {
+            document.getElementById('img').src = 'knit.png';
+            document.getElementById('h1').innerHTML = "You are now knitting";
+            document.getElementById('h2').innerHTML = "You need to purl next";
+            document.getElementById('btn').innerHTML = "I'm done knitting!";
+        }
+    }
+</script>
+
+</body>
+</html>
